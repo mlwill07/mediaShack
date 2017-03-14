@@ -1,0 +1,294 @@
+body {
+    box-sizing: border-box;
+    background: dimgrey center center no-repeat fixed;
+    background-size: cover;
+}
+
+.navbar {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2em;
+}
+
+.navbar-brand {
+    font-size: 1.2em;
+}
+
+.carousel-indicators {
+    visibility: hidden;
+}
+
+
+
+.carousel-caption > h3 {
+    font-family: 'Josefin Sans', sans-serif;
+    text-align: left;
+    color: white;
+    font-size: 3em;
+    left: 10% !important;
+}
+.carousel-caption > h3 > a {
+    color: white;
+}
+
+.carousel-caption > h3 >a:hover {
+    color:#01d277;
+    text-decoration: none;
+}
+
+@media screen and (min-width: 768px) {
+    
+.carousel-caption {
+    right: 5%;
+    left: 5%;
+    padding-bottom: 30px;
+    }
+
+}
+
+
+.mainContent {
+    position: relative;
+    top: 50px;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 40px;
+    padding: 0px;
+    
+}
+
+.moviescol {
+    padding-left: 5px;
+}
+
+.genrescol {
+    padding-right: 2px;
+}
+
+small {
+    color: whitesmoke !important;
+}
+
+.moviesback {
+    width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5px;
+}
+
+.content {
+    margin-top: 10px;
+    background-color: rgba(185, 185, 185, .65);
+    border: 2px solid grey;
+    border-radius: 5px;
+    color: black;
+    padding: 25px 25px;
+    font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.homeSplash,
+.homeTile {
+    font-family: 'Josefin Sans', sans-serif;
+    color: #01d277;
+    padding: 10px 5px;
+    border: 1px solid #01d277;
+}
+
+.homeSplash:hover {
+    background-color: #01d277;
+    color: dimgray;
+    border: 1px solid dimgrey;
+}
+
+.movieTop {
+    background-color: rgba(105, 105, 105, .8);
+    
+}
+
+.titleimg, 
+.movieTag, 
+.movieTop {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+}
+
+.titleimg {
+    padding-left: 0px !important;
+}
+
+.titlebar {
+    padding-left: 25px;
+    padding-left: 15px;
+}
+
+.titlebar small {
+    color: black;
+}
+
+.imdb {
+    color: gold;
+}
+
+.imdb:visited {
+    color: goldenrod;
+}
+
+.imdb:hover {
+    color: black;
+    
+}
+
+.overview {
+    font-size: 1.25em;
+    color: lightgray;
+    padding: 10px;
+    text-align: justify;
+    max-height: 238px;
+    overflow: scroll;
+    text-overflow: ellipsis;
+    
+}
+
+
+.movies {
+    padding-left: 5px;
+    color: #01d277;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 1.5em;
+    font-size: 1em;
+    text-transform: uppercase;
+    background-color: grey;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;   
+}
+
+.movies:hover {
+    background-color: dimgray;
+}
+
+
+
+.searchList a {
+    color: whitesmoke;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1.25em;
+    line-height: 1.5em;
+}
+
+.searchList >a:hover {
+    color: #01d277;
+}
+
+ul {
+    list-style: none;
+    padding-left: 3px;
+    
+}
+
+hr {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.movies a {
+    color:#01d277;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover {
+    background-color: grey;
+    color: black;
+/*    text-transform: uppercase;*/
+    font-size: 1.35em;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    
+}
+
+.nav-tabs>li>a, .nav-tabs>li>a:focus, .nav-tabs>li>a:hover {
+    background-color: dimgray;
+    color: #01d277;
+/*    text-transform: uppercase;*/
+    font-size: 1.35em;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+
+
+.mainFooter {
+    max-height: 75px;
+    line-height: 2em;
+    padding-top: 10px;
+    color: gainsboro;
+}
+
+.popPeop {
+    color: whitesmoke;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: .8em;
+}
+
+.panel {
+    text-align: center;
+    background-color: dimgray;
+    border: 2px solid dimgrey;
+}
+
+.panel div {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.more:hover {
+    color: aliceblue;
+    cursor: pointer;
+}
+
+.personDiv {
+    width: 70px;
+    height: 92px;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    margin-bottom: 5px;
+}
+
+.review {
+    font-size: 1em;
+    color: lightgray;
+    padding: 10px;
+    text-align: justify;
+    max-height: 238px;
+    overflow: scroll;
+    border-bottom: 1px solid lightgrey;
+    
+}
+
+.reviewby >a {
+    color:lightgray;
+    font-size: 1.25em;
+}
+
+.footleft>a {
+    color: #01d277;
+}
+
+.footright {
+    text-align: right;
+    height: 35px !important;
+    overflow: hidden;
+}
+
+img.footerImg {
+    height: 35px;        
+}
+
+
+.video {
+    width: 600px;
+    margin: auto;
+}

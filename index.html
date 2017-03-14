@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app='routingApp'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Movies and TV</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class='navbar navbar-default navbar-fixed-top navbar-inverse'>
+        <div class='container-fluid'>
+            <div class='navbar-header'>
+
+                <a class='navbar-brand' href="#/home">Media Shack</a>
+            </div>
+            <div class="collapse navbar-collapse" >
+            <form class="navbar-form navbar-right">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Search" ng-model='search'>
+                </div>
+                <a href='#/search/{{search}}' class="btn btn-default"><span class='glyphicon glyphicon-search'></span></a>
+            </form>
+        </div>
+        </div>
+    </nav>
+
+
+
+
+    <div class="mainContent container-fluid" ng-view autoscroll='true'></div>
+
+
+
+    <div class="container-fluid">
+
+        <div class='row '>
+            <div class='mainFooter navbar-fixed-bottom navbar-inverse'>
+                <div class='col-xs-6 footleft'>
+                    All data provided by <a href='www.themoviedb.org'>The Movie Database</a>
+                </div>
+                <div class='col-xs-6 footright'>
+                    <img class='footerImg' src="TMDBlogo2.png" alt="tmdblogo">
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- SCRIPT TAGS -->
+    <script src="https://use.fontawesome.com/0ea91bf605.js"></script>
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular-route.js"></script>
+    <script src='node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'></script>
+
+    <!-- routes -->
+    <script src='app.js'></script>
+    <script src='components/home/home.js'></script>
+    <script src='components/tv/tv.js'></script>
+    <script src='components/movies/movies.js'></script>
+    <script src='components/people/people.js'></script>
+    <script src='components/results-list/resultsList.js'></script>
+
+    <!-- services -->
+    <script src='services.js'></script>
+
+
+</body>
+
+</html>

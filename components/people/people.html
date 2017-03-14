@@ -1,0 +1,69 @@
+<div class="moviesback" style="background-image: url('{{imgPath}}')">
+
+    <div class='container'>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+
+                    <div class="row movieTop">
+
+                        <div class="col-sm-10 titlebar">
+                            <h1> {{person.name}} </h1>
+                        </div>
+                        <div class="col-sm-2 right">
+                            <a target="_blank" class='imdb' href="{{imdbPath}}"><i class="fa fa-imdb fa-3x" aria-hidden="true"></i></a>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row movieTag">
+                        <div class="col-lg-4 col-lg-offset-1">
+                            <img ng-src="{{personPic}}" alt="movie poster">
+                        </div>
+                         <div class="col-lg-6 movieTop">
+                            <h4>Biography</h4>
+                           <p class='overview'>{{person.biography}}</p>
+                            
+                        </div>
+                        <div class="col-lg-6 movieTop">
+                           
+                           <uib-tabset class='cast movieTop' active="active">
+                                <uib-tab index="0" heading="Movie Credits">
+
+                                    <div ng-repeat="movie in person.movie_credits.cast | orderBy:'-release_date' ">
+                                        <h6 class='list movies' ><a href="#/movies/{{movie.id}}">{{movie.title}}: ({{movie.release_date| date: 'yyyy'}}) </a><small>{{movie.character}}</small></h6>
+
+                                    </div>
+                                </uib-tab>
+
+                                <uib-tab index="2" heading="TV Credits">
+                                    <div ng-repeat="tv in person.tv_credits.cast | orderBy:'-first_air_date' | limitTo: 40 ">
+                                        <h6 class='list movies' ><a href="#/tv/{{tv.id}}">{{tv.name}}: ({{tv.first_air_date| date: 'yyyy'}}) </a><small>{{tv.character}}</small></h6>
+
+                                    </div>
+                                </uib-tab>
+                            </uib-tabset>
+                           
+                           
+<!--
+                            <h3>Movie Credits</h3>
+                            <hr>
+                            <div ng-repeat="movie in person.movie_credits.cast | orderBy:'-release_date' ">
+                            <h6 class='list movies' ><a href="#/movies/{{movie.id}}">{{movie.title}}: ({{movie.release_date| date: 'yyyy'}}) </a><small>{{movie.character}}</small></h6>
+-->
+                            
+                            </div>
+                        </div>
+                       
+                    </div>
+                    
+                    
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

@@ -1,0 +1,35 @@
+<div class="moviesback" style="background-image: url('{{imgPath}}')">
+
+    <div class='container'>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+
+                    <div class="row movieTop">
+                        
+                        <div class="col-md-9 titlebar">
+                            <h1> Search Results: <small>{{searchTerm}}</small></h1>
+                            
+                        </div>
+                        <div class="col-md-3">
+                          
+                           <form class='form-group form-inline'>
+                           
+                            <input class='form-control' type="text" placeholder='new search' ng-model='searchItem'>
+                            
+                            <a class='btn btn-default' href='#/search/{{searchItem}}' ><span class='glyphicon glyphicon-search'></span></a>
+                            
+                        </div>
+                        
+
+                    </div>
+                    <hr>
+                   
+                    <ol >
+                        <li class='searchList' ng-repeat='item in keyword'><a ng-href='{{checkType(item.media_type, item.id)}}'>{{item.title || item.name}} <small>({{item.release_date || item.first_air_date | date: 'yyyy'}}) - {{item.media_type}}</small></a></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

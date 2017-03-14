@@ -1,0 +1,85 @@
+<div class="moviesback" style="background-image: url('{{imgPath}}')">
+
+    <div class='container'>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="content">
+
+                    <div class="row movieTop">
+                        <div class="col-md-1 titleimg">
+                            <img ng-src="{{postSm}}" alt="movie poster">
+
+                        </div>
+                        <div class="col-md-9 titlebar">
+                            <h1> {{movie.title}} <small>({{movie.release_date | date:"yyyy"}})</small></h1>
+                            <h3>{{movie.tagline}}</h3>
+                        </div>
+                        <div class="col-md-2 right">
+                            <h3><a target="_blank" class='imdb' href="{{imdbPath}}"><i class="fa fa-imdb fa-2x" aria-hidden="true"></i></a></h3>
+                        </div>
+
+                    </div>
+                    <hr>
+                    <div class="row movieTag">
+
+                        <div class='col-lg-7'>
+                            <div class='video'>
+                                <iframe width="560" height="315" src="{{ trustedUrl }}" frameborder="0" allowfullscreen></iframe>
+                            </div>
+                        </div>
+                        <div class="col-lg-5 movieTop">
+                            <h3>Plot</h3>
+                            <hr>
+                            <p class='overview'>{{movie.overview}}</p>
+                        </div>
+                    </div>
+                    <div class='row cast movieTop'>
+                        <div class="col-lg-7">
+                            <uib-tabset class='cast movieTop' active="active">
+                                <uib-tab index="0" heading="Cast">
+
+                                    <div ng-repeat="person in movie.credits.cast | limitTo: 20">
+                                        <h6 class='list movies'><a href="#/people/{{person.id}}">{{person.name}}: </a><small>{{person.character}}</small></h6>
+
+                                    </div>
+                                </uib-tab>
+
+                                <uib-tab index="2" heading="Crew">
+                                    <div ng-repeat="crew in movie.credits.crew | limitTo: 20">
+                                        <h6 class='list movies'><a href="#/people/{{person.id}}">{{crew.name}}: </a><small>{{crew.job}}</small></h6>
+
+                                    </div>
+                                </uib-tab>
+                            </uib-tabset>
+                        </div>
+
+                        <div class="col-lg-5">
+                            <div>
+                                <h3>Production Information</h3>
+                                <hr>
+                                <div class='overview'>
+                                    <p>Budget: {{movie.budget | currency}}</p>
+                                    <p>Revenue: {{movie.revenue | currency}}</p>
+                                    <p>Release Date: {{movie.release_date | date: 'longDate'}}</p>
+                                    <p>Runtime: {{movie.runtime}} minutes</p>
+                                    <p>TMDb vote score: {{movie.vote_average}} ({{movie.vote_count | number }} votes)</p>
+                                </div>
+                                <div>
+                                    <h3>TMDb Reviews</h3>
+                                    <hr>
+                                    <div ng-repeat='review in movie.reviews.results'>
+                                        <h5 class='reviewby'><a href={{review.url}}>{{review.author}}</a></5>
+                                        <p class='review'>{{review.content}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>

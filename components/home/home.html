@@ -1,0 +1,68 @@
+<div class='container'>
+    <div class="row">
+        <div class="col-md-7">
+            <div>
+                <h1 class='homeTile'>Popular Movies</h1>
+            </div>
+            <div>
+                <div uib-carousel active="active" interval="myInterval" no-wrap="noWrapSlides">
+                    <div uib-slide ng-repeat="slide in slides track by $index" index="$index">
+                        <div class="carousel-caption">
+
+                            <h3><a href="#/movies/{{slide.id}}">{{slide.title}}</a></h3>
+                        </div>
+                        <a href='#/movies/{{slide.id}}'>
+                            <img ng-src="{{slide.imgSrc}}" style="margin:auto;">
+                        </a>
+
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <h1 class='homeSplash' ng-click='toggleSearch("browse")'>Browse by Genre </h1>
+
+                            <select ng-show="genreClick" ng-change='getGenre(genre)' ng-model='genre' class="form-control">
+
+                                <option ng-repeat='genre in testMovie.genres track by $index' value="{{genre.id}}">{{genre.name}}</option>
+
+                            </select>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class='row'>
+                        <div class="col-lg-12">
+                            <ul>
+                                <li ng-show='genreClick' class='list movies' ng-repeat='movie in genreMovies'><a href='#/movies/{{movie.id}}'>{{movie.title}}</a></li>
+                                <li class='list movies more' ng-show='getMore' ng-click='getGenre()'>more...</li>
+                            </ul>
+                            
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="col-md-5">
+            <h1 class='homeTile'>Popular People</h1>
+            <div class="row">
+                <div class="person" ng-repeat='person in people.results'>
+                    <div class="col-sm-2 col-md-3 panel panel-default" >
+                        <a  href=#/people/{{person.id}}><div class='panel panel-default personDiv' style="background-image: url('{{smImg}}{{person.profile_path}}')"> </div></a>       
+                        <a class='popPeop' href=#/people/{{person.id}}>{{person.name}}</a>
+                        
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+
+    </div>
