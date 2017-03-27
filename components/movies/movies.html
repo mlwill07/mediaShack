@@ -6,15 +6,15 @@
                 <div class="content">
 
                     <div class="row movieTop">
-                        <div class="col-md-1 titleimg">
+                        <div class="col-xs-4 titleimg">
                             <img ng-src="{{postSm}}" alt="movie poster">
 
                         </div>
-                        <div class="col-md-9 titlebar">
+                        <div class="col-xs-8 titlebar">
                             <h1> {{movie.title}} <small>({{movie.release_date | date:"yyyy"}})</small></h1>
                             <h3>{{movie.tagline}}</h3>
                         </div>
-                        <div class="col-md-2 right">
+                        <div class="col-sm-2 right">
                             <h3><a target="_blank" class='imdb' href="{{imdbPath}}"><i class="fa fa-imdb fa-2x" aria-hidden="true"></i></a></h3>
                         </div>
 
@@ -23,8 +23,10 @@
                     <div class="row movieTag">
 
                         <div class='col-lg-7'>
-                            <div class='video'>
-                                <iframe width="560" height="315" src="{{ trustedUrl }}" frameborder="0" allowfullscreen></iframe>
+                            <div class='video '>
+                               <div class="embed-responsive embed-responsive-16by9">
+                                  <iframe class="embed-responsive-item" width="560" height="315" src="{{ trustedUrl }}"  allowfullscreen></iframe>
+                                </div>
                             </div>
                         </div>
                         <div class="col-lg-5 movieTop">
